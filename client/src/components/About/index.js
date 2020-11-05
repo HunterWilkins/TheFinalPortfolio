@@ -1,8 +1,11 @@
 import React from "react";
+import "./style.css";
 
 function About(props) {
     return(
-        <h1>About</h1>
+        <div id = "about-page">
+            <h1>About Me</h1>
+        </div>
     )
 }
 

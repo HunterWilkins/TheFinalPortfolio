@@ -1,8 +1,11 @@
 import React from "react";
+import "./style.css";
 
 function Blog(props) {
     return(
-        <h1>Blog</h1>
+        <div id = "blog-page">
+            <h1>Blog</h1>
+        </div>
     )
 }
 

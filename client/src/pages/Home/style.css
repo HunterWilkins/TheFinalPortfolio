@@ -1,0 +1,72 @@
+:root {
+    --main-bk-color: rgb(35, 38, 46);
+    --main-color: rgb(230,230,230);
+
+    --deeper-bk-color: rgb(10, 9, 22);
+
+    --padding: 15px;
+}
+/* 
+.light {
+    --main-bk-color: rgb(230,230,230);
+    --main-color: rgb(30, 30, 30);
+}
+
+.dark {
+    --main-bk-color: rgb(45,45,45);
+    --main-color: rgb(230,230,230);
+} */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    justify-content: space-evenly;
+}
+
+nav > * {
+    cursor: pointer;
+    margin: 0 5px;
+    padding: 5px;
+    flex-grow: 1;
+    text-align:center;
+    background: rgb(12,12,12);
+}
+
+#content {
+    background: var(--main-bk-color);
+    color: var(--main-color);
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+main {
+    background: var(--deeper-bk-color);
+    flex: 1 1 auto;
+}
+
+main > div {
+    padding: 10px;
+    height: 100%;
+    text-align:center;
+}
+
+footer {
+    display: flex;
+    flex: 0 1 20px;
+    align-items: center;
+    padding: 15px;
+    justify-content: center;
+}

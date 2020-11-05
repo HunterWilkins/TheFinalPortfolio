@@ -29,19 +29,34 @@ class Home extends Component {
         }
     ];
 
+    componentDidMount = () => {
+        this.capitalize("hello");
+    }
+
     renderPage = () => {
         return this.pages.filter(page => this.state.page === page.name)[0].component;
+    }
+
+    capitalize = (string) => {
+        console.log(string[0].toUpperCase() + string.slice(1));
+        return string[0].toUpperCase() + string.slice(1);
     }
 
     render() {
         return(
             <div id = "content">
-                <nav>{this.pages.map(page => <p onClick = {() => this.setState({page: page.name})}>{page.name}</p>)}</nav>
+                <header>
+                    <h1>Hunter Wilkins</h1>
+                </header>
+                <nav>{this.pages.map(page => <p onClick = {() => this.setState({page: page.name})}>{this.capitalize(page.name)}</p>)}</nav>
                 <main>
                     {
                        this.renderPage() 
                     }
                 </main>
+                <footer>
+                    <p>wilkins.hunter@gmail.com</p>
+                </footer>
             </div>
         )
     }

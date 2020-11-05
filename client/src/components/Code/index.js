@@ -1,8 +1,11 @@
 import React from "react";
+import "./style.css";
 
 function Code(props) {
     return(
-        <h1>Code</h1>
+        <div id = "code-page">
+            <h1>Code</h1>
+        </div>
     )
 }
 
