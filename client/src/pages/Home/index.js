@@ -38,8 +38,12 @@ class Home extends Component {
     }
 
     capitalize = (string) => {
-        console.log(string[0].toUpperCase() + string.slice(1));
         return string[0].toUpperCase() + string.slice(1);
+    }
+
+    changePage = (page) => {
+        console.log(page);
+        this.setState({page: page})
     }
 
     render() {
@@ -48,7 +52,7 @@ class Home extends Component {
                 <header>
                     <h1>Hunter Wilkins</h1>
                 </header>
-                <nav>{this.pages.map(page => <p onClick = {() => this.setState({page: page.name})}>{this.capitalize(page.name)}</p>)}</nav>
+                <nav>{this.pages.map(page => <p className = {this.state.page === page.name ? "active-tab" : ""} onClick = {() => this.changePage(page.name)}>{this.capitalize(page.name)}</p>)}</nav>
                 <main>
                     {
                        this.renderPage() 

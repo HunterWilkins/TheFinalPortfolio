@@ -1,3 +1,62 @@
 #about-page {
+    display: flex;
+    flex-direction: column;
+}
+#about-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align:left;
+    width: 700px;
+    margin: 0 auto;
+    padding: 15px;
 }
 
+#about-info :first-child {
+    flex: 1;
+    margin-right: 15px;
+}
+
+#about-info :last-child {
+    flex:2;
+}
+
+#current-projects {
+    width: 500px;
+    margin: 0 auto;
+}
+
+#current-projects li {
+    margin: 15px 0;
+}
+
+#current-projects .description {
+    text-align: left;
+}
+
+#portrait-box {
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: var(--deeper-bk-color) solid 8px;
+}
+
+#portrait {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.banner {
+    background: var(--main-bk-color-half);
+}
+
+.title {
+    margin-bottom: 15px;
+}
+
+.width-constraint {
+    width: 500px;
+    margin: 0 auto;
+}
