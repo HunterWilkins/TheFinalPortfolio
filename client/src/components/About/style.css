@@ -22,12 +22,21 @@
 }
 
 #current-projects {
-    width: 500px;
-    margin: 0 auto;
+    text-align:left;
+}
+
+#current-projects h1 {
+    padding-left: 15px;
 }
 
 #current-projects li {
-    margin: 15px 0;
+    padding: 2em 0;
+    width: 700px;
+    margin: 0 auto;
+}
+
+#current-projects li:not(:last-child) {
+    border-bottom: var(--main-bk-color) dashed 4px;
 }
 
 #current-projects .description {
