@@ -14,9 +14,7 @@ function Artwork(props) {
     }
 
     return(
-        <div id = "artwork-page">
-            <h1>Artwork</h1>
-           
+        <div id = "artwork-page">           
             <section id = "gallery">
                 {
                     props.genres.map(item => {
