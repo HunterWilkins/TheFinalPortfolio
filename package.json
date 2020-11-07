@@ -1,29 +1,38 @@
 {
-  "name": "TheFinalPortfolio",
+  "name": "final-portfolio",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
+  "engines": {
+    "node" : "12.16.1"
+  },
   "scripts": {
+    "begin": "npm run build && node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "start:dev": "cd client && npm run start",
+    "start:original": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client'/*'\" \"npm run client\"",
     "install": "cd client && npm install",
-    "build": "cd client && npm run build",
-    "heroku-postbuild": "npm run build"
+    "client": "cd client && npm run start",
+    "build": "cd client && npm run build"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HunterWilkins/TheFinalPortfolio.git"
+    "url": "git+https://github.com/HunterWilkins/portfolioReact.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/HunterWilkins/TheFinalPortfolio/issues"
+    "url": "https://github.com/HunterWilkins/portfolioReact/issues"
   },
-  "homepage": "https://github.com/HunterWilkins/TheFinalPortfolio#readme",
+  "homepage": ".",
   "dependencies": {
+    "axios": "^0.19.2",
+    "concurrently": "^5.1.0",
+    "create-react-app": "^3.4.0",
     "express": "^4.17.1",
-    "react-router-dom": "^5.2.0"
+    "npm": "^6.14.2"
   }
 }

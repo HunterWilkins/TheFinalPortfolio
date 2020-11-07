@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import "./style.css";
+import axios from "axios";
 
 import About from "../../components/About";
 import Artwork from "../../components/Artwork";
@@ -10,32 +11,18 @@ class Home extends Component {
         page: "about"
     }
 
-    pages = [
-        {
-            name: "about",
-            component: <About />
-        },
-        {
-            name: "artwork",
-            component: <Artwork />
-        },
-        {
-            name: "blog",
-            component: <Blog />
-        },
-        {
-            name: "code",
-            component: <Code />
-        }
-    ];
-
     componentDidMount = () => {
         this.capitalize("hello");
+        axios.get("/api/art").then(response => {
+            this.setState({
+                art: response.data
+            });
+        }).catch(function(err) {
+            console.log(err);
+        })
     }
 
-    renderPage = () => {
-        return this.pages.filter(page => this.state.page === page.name)[0].component;
-    }
+ 
 
     capitalize = (string) => {
         return string[0].toUpperCase() + string.slice(1);
@@ -47,15 +34,38 @@ class Home extends Component {
     }
 
     render() {
+        let pages = [
+            {
+                name: "about",
+                component: <About />
+            },
+            {
+                name: "artwork",
+                component: <Artwork genres = {this.state.art}/>
+            },
+            {
+                name: "blog",
+                component: <Blog />
+            },
+            {
+                name: "code",
+                component: <Code />
+            }
+        ];
+
+        let renderPage = () => {
+            return pages.filter(page => this.state.page === page.name)[0].component;
+        }
+
         return(
             <div id = "content">
                 <header>
                     <h1>Hunter Wilkins</h1>
                 </header>
-                <nav>{this.pages.map(page => <p className = {this.state.page === page.name ? "active-tab" : ""} onClick = {() => this.changePage(page.name)}>{this.capitalize(page.name)}</p>)}</nav>
+                <nav>{pages.map(page => <p className = {this.state.page === page.name ? "active-tab" : ""} onClick = {() => this.changePage(page.name)}>{this.capitalize(page.name)}</p>)}</nav>
                 <main>
                     {
-                       this.renderPage() 
+                       renderPage() 
                     }
                 </main>
                 <footer>
