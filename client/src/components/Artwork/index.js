@@ -9,23 +9,30 @@ function Artwork(props) {
         console.log(artwork);
     }
 
+    function fixTitle(title) {
+        return title.replace(/=|.jpg|.png|-Thumbnail/g," ");
+    }
+
     return(
         <div id = "artwork-page">
             <h1>Artwork</h1>
-            <div id = "test-div">
-                <p>Whoa dude</p>
-            </div>
+           
             <section id = "gallery">
                 {
                     props.genres.map(item => {
                         return(
                         <section>
                         
-                            <h1>{item.genre}</h1>
-                            <section>
+                            <h1 className = "genre-title">{item.genre}</h1>
+                            <section className = "thumbnails">
                                 {
                                     item.thumbnails.map(thumbnail => {
-                                        return <img src = {"/images/Artwork/" + item.genre + "/thumbnails/" + thumbnail} alt = {thumbnail}></img>
+                                        return( 
+                                        <figure className = "thumbnail-box">
+                                                <p className = "thumbnail-title">{fixTitle(thumbnail)}</p>
+                                                <img className = "thumbnail" src = {"/images/Artwork/" + item.genre + "/thumbnails/" + thumbnail} alt = {thumbnail}></img>
+                                        </figure>
+                                        )
                                     })
                                 }
                             </section>

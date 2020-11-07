@@ -1,5 +1,67 @@
-#artwork-page {
+@keyframes blink {
+    from {
+        opacity: 0;
+        right: 100%;
+    }
+    to {
+        opacity: 1;
+        right: 0;
+    }
 }
 
-#test-div {
+.genre-title {
+    padding: 15px;
+}
+
+.thumbnails {
+    border-top: dashed var(--main-bk-color-half) 4px;
+    border-bottom: dashed var(--main-bk-color-half) 4px;
+    padding: 10px 0;
+}
+
+.thumbnail-box {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+    width: 200px;
+    height: 200px;
+    border: var(--main-bk-color) solid 4px;
+    margin: 10px;
+    overflow: hidden;
+    border-radius: 50%;
+    transition: .1s;
+}
+
+.thumbnail-box:hover {
+    border: var(--main-color) solid 4px;
+}
+
+.thumbnail-box:hover .thumbnail-title {
+    opacity: 1;
+    animation-name: blink;
+    animation-duration: .25s;
+}
+
+.thumbnail {
+    width: 100%;
+}
+
+.thumbnail-title {
+    opacity: 0;
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    background: var(--deeper-bk-color-half);
+    width: 100%;
+    padding: 15px;
+}
+
+.flex {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
