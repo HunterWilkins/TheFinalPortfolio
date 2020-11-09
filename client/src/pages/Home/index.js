@@ -12,14 +12,13 @@ class Home extends Component {
     }
 
     componentDidMount = () => {
-        this.capitalize("hello");
         axios.get("/api/art").then(response => {
             this.setState({
                 art: response.data
             });
         }).catch(function(err) {
             console.log(err);
-        })
+        });
     }
 
  
@@ -57,6 +56,20 @@ class Home extends Component {
             return pages.filter(page => this.state.page === page.name)[0].component;
         }
 
+        let footerIcons = [
+            {
+                icon: "github-icon.png",
+                url: "https://github.com/HunterWilkins"
+            },
+            {
+                email: "wilkins.hunter@gmail.com"
+            },
+            {
+                icon: "linkedin-icon.png",
+                url: "https://www.linkedin.com/in/hunter-wilkins-591047117/"
+            }
+        ]
+
         return(
             <div id = "content">
                 <header>
@@ -69,7 +82,22 @@ class Home extends Component {
                     }
                 </main>
                 <footer>
-                    <p>wilkins.hunter@gmail.com</p>
+                    {
+                        footerIcons.map(item => {
+                            if (item.email) {
+                                return (
+                                    <p>{item.email}</p>
+                                )
+                            }
+
+                            else {
+                            
+                                return (
+                                    <a className = "icon" target = "_blank" href = {item.url}><img src = {"/images/icons/" + item.icon} alt = {item.icon} /></a>
+                                )
+                            }
+                        })
+                    }
                 </footer>
             </div>
         )

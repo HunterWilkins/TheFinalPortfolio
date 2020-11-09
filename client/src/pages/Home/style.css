@@ -115,14 +115,23 @@ main > div {
     padding: 15px 0;
     animation-name: switchPage;
     animation-duration: .5s;
+    vertical-align: top;
 }
 
 footer {
     display: flex;
     flex: 0 1 10px;
     align-items: center;
-    padding: 10px;
-    justify-content: center;
+    padding: 5px;
+    justify-content: space-evenly;
+}
+
+.icon {
+    width: 25px;
+}
+
+.icon > img {
+    width: 100%;
 }
 
 

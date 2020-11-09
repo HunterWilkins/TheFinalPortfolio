@@ -26,3 +26,7 @@ em {
 strong {
     font-weight: bolder;
 }
+a {
+    color: inherit;
+    text-decoration: none;
+}
