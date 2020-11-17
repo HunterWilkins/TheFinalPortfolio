@@ -6,9 +6,16 @@ import About from "../../components/About";
 import Artwork from "../../components/Artwork";
 import Blog from "../../components/Blog";
 import Code from "../../components/Code";
+import FullImage from "../../components/FullImage";
+
 class Home extends Component {
     state = {
-        page: "about"
+        page: "about",
+        fullImageSrc: "",
+        fullImageAlt: "",
+        fullImageDisplay: false,
+        fullImageLoaded: false,
+        fullImages: []
     }
 
     componentDidMount = () => {
@@ -21,8 +28,6 @@ class Home extends Component {
         });
     }
 
- 
-
     capitalize = (string) => {
         return string[0].toUpperCase() + string.slice(1);
     }
@@ -30,6 +35,31 @@ class Home extends Component {
     changePage = (page) => {
         console.log(page);
         this.setState({page: page})
+    }
+
+    switchToImageLoaded = (imageLoaded) => {
+        this.setState({
+            fullImageLoaded: imageLoaded
+        });
+    }
+
+    turnOffFullScreen = () => {
+        this.setState({
+            fullImageLoaded: false,
+            fullImageDisplay: false
+        });
+    }
+
+    getFullSizedImage = (image, genre) => {
+        let imageSrc = image.replace(/-Thumbnail/g, "");
+        let imageAlt = imageSrc.replace(/.jpg | .png |=/g, "");
+        
+        this.setState({
+            fullImageSrc: "/images/Artwork/" + genre + "/full-size/" + imageSrc,
+            fullImageAlt: imageAlt,
+            fullImageDisplay: true,
+            fullImages: [this.state.fullImages, ...image]
+        });
     }
 
     render() {
@@ -40,7 +70,17 @@ class Home extends Component {
             },
             {
                 name: "artwork",
-                component: <Artwork genres = {this.state.art}/>
+                component: <Artwork 
+                fullImageDisplay = {this.state.fullImageDisplay} 
+                src = {this.state.fullImageSrc} 
+                alt = {this.state.fullImageAlt} 
+                getFullSizedImage = {this.getFullSizedImage}
+                switchToImageLoaded = {this.switchToImageLoaded}
+                genres = {this.state.art}
+                turnOffFullScreen = {this.turnOffFullScreen}
+                fullImageLoaded = {this.state.fullImageLoaded}
+                fullImages = {this.state.fullImages}
+                />
             },
             {
                 name: "blog",

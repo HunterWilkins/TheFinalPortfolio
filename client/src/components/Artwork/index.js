@@ -1,20 +1,31 @@
 import React from "react";
 import "./style.css";
-import axios from "axios";
-function Artwork(props) {
-    console.log("This is the genres array: " + props.genres);
 
-    async function getArt() {
-        const artwork = await axios.get("/api/art");
-        console.log(artwork);
-    }
+import FullImage from "../FullImage";
+
+function Artwork(props) {
 
     function fixTitle(title) {
         return title.replace(/=|.jpg|.png|-Thumbnail/g," ");
     }
 
     return(
-        <div id = "artwork-page">           
+        <div id = "artwork-page">  
+            {
+             props.fullImageDisplay ? 
+                <FullImage 
+                    fullImageDisplay = {props.fullImageDisplay} 
+                    src = {props.src} 
+                    alt = {props.alt}
+                    fullImageLoaded = {props.fullImageLoaded}
+                    turnOffFullScreen = {props.turnOffFullScreen}
+                    switchToImageLoaded = {props.switchToImageLoaded}
+                    fullImages = {props.fullImages} 
+                />
+                :
+                ""
+            }
+                     
             <section id = "gallery">
                 {
                     props.genres.map(item => {
@@ -26,7 +37,7 @@ function Artwork(props) {
                                 {
                                     item.thumbnails.map(thumbnail => {
                                         return( 
-                                        <figure className = "thumbnail-box">
+                                        <figure onClick = {() => props.getFullSizedImage(thumbnail, item.genre)} className = "thumbnail-box">
                                                 <p className = "thumbnail-title">{fixTitle(thumbnail)}</p>
                                                 <img className = "thumbnail" src = {"/images/Artwork/" + item.genre + "/thumbnails/" + thumbnail} alt = {thumbnail}></img>
                                         </figure>
