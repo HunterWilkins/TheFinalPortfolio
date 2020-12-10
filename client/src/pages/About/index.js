@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-function About(props) {
+function About() {
     return(
         <div id = "about-page">
             <div className = "banner">

@@ -13,7 +13,6 @@ router.get("/art", async (req, res) => {
             thumbnails: fs.readdirSync(thumbnailPath),   
         }
     });
-
     console.log(thumbnailFiles);
     res.json(thumbnailFiles);
 });

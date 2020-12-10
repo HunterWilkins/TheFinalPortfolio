@@ -98,8 +98,6 @@ nav > * {
     bottom: 0;
 }
 
-
-
 main > div {
     position: absolute;
     top: 0;
@@ -109,8 +107,8 @@ main > div {
     text-align:center;
     overflow-y: auto;
     padding: 15px 0;
-    animation-name: switchPage;
-    animation-duration: .5s;
+    /* animation-name: switchPage; */
+    /* animation-duration: .5s; */
     vertical-align: top;
 }
 
@@ -121,6 +119,11 @@ main > div {
 /* Custom Classes */
 .active-tab {
     background: var(--deeper-bk-color);
-    animation-name: activate-tab;
-    animation-duration: .15s;
+    /* animation-name: activate-tab;
+    animation-duration: .15s; */
+}
+main {
+    position: relative;
+    background: var(--deeper-bk-color);
+    flex: 1 1 auto;
 }
