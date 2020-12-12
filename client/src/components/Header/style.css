@@ -1,0 +1,56 @@
+@keyframes activate-tab {
+    from {
+        transform: scale(1.2);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+#logo {
+    flex: 1;
+}
+
+nav {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    /* box-shadow: 0 10px 5px var(--deeper-bk-color); */
+    z-index: 5;
+    flex: 1;
+}
+
+nav > * {
+    cursor: pointer;
+    margin: 0 5px;
+    padding: 5px;
+    flex: 1;
+    text-align:center;
+    border-bottom: rgba(0,0,0,0) solid 2px;
+}
+
+.active-tab {
+
+    /* background: var(--deeper-bk-color); */
+    border-bottom: white solid 2px;
+    animation-name: activate-tab;
+    animation-duration: .15s;
+}
+
+@media only screen and (max-width: 500px) {
+   header {
+       text-align:center;
+       display: block;
+       padding: 0;
+   }
+
+   #logo {
+       padding: 10px;
+   }
+}

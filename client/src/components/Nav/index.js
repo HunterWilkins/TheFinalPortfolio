@@ -1,12 +1,19 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 function Nav(props) {
   
-    let pages = ["About", "Artwork", "Code", "Blog"];
+    let pages = ["About", "Artwork", "Code"];
+    function capitalize(string) {
+        return string.slice(0)[0].toUpperCase() + string.slice(1)
+    }
+    const [currentPage, setCurrentPage] = useState(capitalize(window.location.pathname.split("/")[1]));
     return(
         <nav>{
             pages.map(page => 
-            <Link to = {"/" + page.toLowerCase()}>
+            <Link 
+                className = {currentPage === page ? "active-tab" : ""} 
+                to = {"/" + page.toLowerCase()}
+                onClick = {() => setCurrentPage(page)}>
                 {page}
             </Link>)
         }</nav>

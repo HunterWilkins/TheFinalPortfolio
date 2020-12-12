@@ -48,11 +48,16 @@ function Code(props) {
             {
                 codeCards.map(code => {
                     return (
-                        <a href = {code.href} className = "code">
-                            <p>{code.title}</p>
-                            <img src = {"/images/icons/Code/" + code.img} alt = {code.title} />
+                        <div href = {code.href} className = "code">
+                            <h3>{code.title}</h3>
+                            <a href = {code.href} target = "__blank">
+                                <img className = "deployed-icon" src = {"/images/icons/Code/" + code.img} alt = {code.title} />
+                            </a>
                             <p>{code.desc}</p>
-                        </a>
+                            <a href = {code.github} target = "__blank">
+                                <img src = {"/images/icons/github-icon.png"} alt = "github icon" />
+                            </a>
+                        </div>
                     )
                 })
             }

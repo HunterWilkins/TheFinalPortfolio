@@ -16,7 +16,6 @@ function App() {
     <Router>
       <div id = "content">
         <Header />
-        <Nav />
         <NewHome>
 
         <GlobalContextProvider>

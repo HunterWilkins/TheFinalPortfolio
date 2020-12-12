@@ -1,11 +1,10 @@
-#code-page {
-    display: flex;
-    justify-content: center;
-}
+
 .code {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: inline-block;
+    position: relative;
+    vertical-align:top;
+    /* flex-direction: column;
+    align-items: center; */
     margin: 5px;
     width: 200px;
     height: 250px;
@@ -13,8 +12,19 @@
     text-align: center;
 }
 
-.code img {
+.code h3 {
+    padding: 5px;
+}
+
+.deployed-icon {
     margin: 0 auto;
     width: 80px;
     height: 80px;
+}
+
+img[alt="github icon"] {
+    width: 30px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }

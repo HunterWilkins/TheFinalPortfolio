@@ -63,28 +63,6 @@ body {
     line-height: 1.5em;
 }
 
-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-}
-
-nav {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-evenly;
-    /* box-shadow: 0 10px 5px var(--deeper-bk-color); */
-    z-index: 5;
-}
-
-nav > * {
-    cursor: pointer;
-    margin: 0 5px;
-    padding:10px;
-    flex-grow: 1;
-    text-align:center;
-}
 
 #content {
     background: var(--main-bk-color);
@@ -117,11 +95,7 @@ main > div {
 
 
 /* Custom Classes */
-.active-tab {
-    background: var(--deeper-bk-color);
-    /* animation-name: activate-tab;
-    animation-duration: .15s; */
-}
+
 main {
     position: relative;
     background: var(--deeper-bk-color);
