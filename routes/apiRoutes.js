@@ -18,13 +18,7 @@ router.get("/art", async (req, res) => {
 });
 
 router.get("/description/:image", function(req, res) {
-    console.log("Hitting Description API");
-    const file = req.params.image.replace(/=|.jpg|.png/g, "");
-    console.log(file);
-    let description;
-    // fs.readdirSync(path.join(__dirname, "/client/public/documents/descriptions/" + req.params.image + ".txt"));
-    fs.readFile(path.join(__dirname, "/client/public/descriptions/" + file.trim() + ".txt"), "utf8", (err, data) =>{
-        console.log(data);
+    fs.readFile(path.join(__dirname, "../client/public/descriptions/" + req.params.image.trim() + ".txt"), "utf8", (err, data) =>{
         res.send(data);
     });
     

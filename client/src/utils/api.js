@@ -6,6 +6,7 @@ export default {
     },
 
     getDescription: function(image) {
+        console.log(image);
         return axios.get("/api/description/" + image);
     }
 } 

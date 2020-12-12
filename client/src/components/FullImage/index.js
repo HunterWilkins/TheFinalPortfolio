@@ -6,28 +6,30 @@ import {useGlobalContext} from "../../utils/GlobalContext";
 function FullImage({src, genre, fullScreenOff}) {
     // const {state, dispatch} = useGlobalContext();
     const [loaded, setLoaded] = useState(false);
-    console.log(src, genre);
+    const [showDesc, setShowDesc] = useState(true);
     const [description, setDescription] = useState("");
     useEffect(() => {
         getDescription(changeSrc(src));
     }, [])
 
     function getDescription(image) {
-        API.getDescription(image).then(({data}) => {
+        console.log(image);
+        API.getDescription(image.replace(/=|.jpg|.png/g, "")).then(({data}) => {
             setDescription(data);
-            console.log(description);
+            console.log(data);
         }).catch(() => setDescription(""));
     }
 
     function changeSrc(src) {
         return src.replace(/-Thumbnail/g, "");
     }
+    
     return(
         <div  id = "full-image-box">
             <figure id = "full-image-figure" onClick = {() => fullScreenOff()} style = {!loaded ? {backgroundImage: "url('/images/icons/loading.gif')"} : {}}>
                 <img onLoad = {() => {
                     console.log("Image Loaded");
-                    getDescription(changeSrc(src));
+                    // getDescription(changeSrc(src));
                     setLoaded(true);
                 }} 
                     id = "full-image" 
@@ -36,6 +38,10 @@ function FullImage({src, genre, fullScreenOff}) {
                     style = {loaded ? {display: "block"} : {display: "none"}}
                 />
             </figure>
+            <summary style = {showDesc && description.length > 0 ? {display: "block"} : {display: "none"}} id = "description" onClick = {() => setShowDesc(false)}>
+                <button id = "close-desc">x</button>
+                <p>{description}</p>
+            </summary>
         </div>
     )
 }

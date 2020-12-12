@@ -25,6 +25,7 @@
     position: fixed;
     display: flex;
     flex-direction: column;
+    /* align-items: center; */
     top: 0;
     bottom: 0;
     left: 0;
@@ -38,6 +39,9 @@
 #full-image-figure {
     position: relative;
     max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex: 1;
     max-height: 100%;
     overflow-y: hidden;
@@ -48,13 +52,39 @@
 }
 
 #full-image {
-    position: absolute;
+    /* position: absolute;
     transform: translate(-50%, -50%);
     top: 50%;
-    left: 50%;
-    margin: 0 auto;
+    left: 50%; */
+    z-index:11;
+    /* margin: 0 auto; */
     animation-name: throwImage;
     animation-duration: .75s;
     max-width: 100%;
     max-height: 100%;
+}
+
+#description {
+    width: 100%;
+    padding: 15px;
+    position: absolute;
+    bottom: 0;
+    text-shadow: 0 5px 5px black;
+    background:rgba(0, 0, 0, 0.75);
+
+    z-index:15;
+}
+
+#close-desc {
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index:15;
+    border-radius: 50%;
+    background: var(--main-bk-color);
+    color: white;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 18px;
+    border: rgba(255, 255, 255, 0.562) solid 2px;
 }
