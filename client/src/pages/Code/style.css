@@ -1,4 +1,6 @@
-
+#code-page {
+    text-align:center;
+}
 .code {
     display: inline-block;
     position: relative;
