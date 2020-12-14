@@ -74,20 +74,14 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
+    overflow-y: auto;
 }
 
 main > div {
-    flex: 1;
-    /* position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0; */
+    /* flex: 1; */
     text-align:center;
     padding: 15px 0;
-    /* animation-name: switchPage; */
-    /* animation-duration: .5s; */
-    vertical-align: top;
+    /* vertical-align: top; */
 }
 
 
@@ -99,8 +93,8 @@ main > div {
 main {
     display: flex;
     flex-direction: column;
-    position: relative;
-    overflow-y: auto;
+    /* position: relative; */
+    /* overflow-y: auto; */
     background: var(--deeper-bk-color);
     flex: 1;
 }

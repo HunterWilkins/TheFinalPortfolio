@@ -27,9 +27,9 @@ function App() {
             <Route exact path = "/" component = {About} />
           </Switch>
         </GlobalContextProvider>
-        <Footer />
+       
         </NewHome>
-        
+        <Footer />
       </div>
     </Router>
   );
