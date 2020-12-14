@@ -78,14 +78,11 @@ body {
 }
 
 main > div {
-    /* flex: 1; */
+    flex: 1;
     text-align:center;
     padding: 15px 0;
     /* vertical-align: top; */
 }
-
-
-
 
 
 /* Custom Classes */
