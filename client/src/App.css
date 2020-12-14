@@ -105,6 +105,10 @@ body {
     line-height: 1.5em;
 }
 
+#root {
+    overflow-y: auto;
+}
+
 
 #content {
     background: var(--main-bk-color);
