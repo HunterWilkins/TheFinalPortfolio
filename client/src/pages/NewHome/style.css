@@ -21,5 +21,6 @@ main {
     background: var(--deeper-bk-color);
     flex: 1;
     overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
 
 }

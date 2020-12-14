@@ -10,9 +10,7 @@
 }
 
 #artwork-page {
-    overflow-y: scroll;
     text-align:center;
-    -webkit-overflow-scroliling: touch;
 }
 
 .genre-title {
