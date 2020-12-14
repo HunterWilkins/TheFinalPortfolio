@@ -23,6 +23,7 @@
 }
 
 #resume {
+    display: block;
     font-size: 20px;
     background: var(--main-bk-color);
     margin: 15px auto;
