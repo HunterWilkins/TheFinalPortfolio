@@ -19,13 +19,11 @@ function About() {
                                 he's constantly learning new ways to meld together the creative and the practical.
                             </p>
                         </div>
-                        
+                        <a id = "resume" target = "_blank" href = "./images/Hunter Wilkins Resume V5.pdf">Resume</a>
+
                 </section>
             </div>
-     
-            <br></br>
-
-            <a id = "resume" target = "_blank" href = "./images/Hunter Wilkins Resume V5.pdf">Resume</a>
+    
         </div>
     )
 }
