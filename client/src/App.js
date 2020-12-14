@@ -15,7 +15,6 @@ import "./App.css";
 function App() {
   return (
     <Router>
-      <div id = "content">
         <Header />
         <NewHome>
 
@@ -28,10 +27,9 @@ function App() {
             <Route exact path = "/" component = {About} />
           </Switch>
         </GlobalContextProvider>
-       
-        </NewHome>
         <Footer />
-      </div>
+        </NewHome>
+        
     </Router>
   );
 }
