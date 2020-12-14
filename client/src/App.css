@@ -1,3 +1,37 @@
+* {
+    box-sizing: border-box;
+}
+
+/* Basic HTML Element Styling */
+h1 {
+    font-size: 30px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+p {
+    font-size: 18px;
+}
+
+em {
+    font-style: italic;
+}
+
+strong {
+    font-weight: bolder;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
 :root {
     --main-bk-color: rgb(35, 38, 46);
     --main-bk-color-half: rgba(35, 38, 46, .5);
@@ -75,10 +109,10 @@ body {
     display: -webkit-flex;
     display: flex;
     flex-direction: column;
-    position: fixed;
+    /* position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: 0; */
     overflow-y: auto;
 }
