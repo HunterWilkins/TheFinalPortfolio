@@ -77,13 +77,13 @@ body {
 }
 
 main > div {
-    position: absolute;
+    flex: 1;
+    /* position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: 0; */
     text-align:center;
-    overflow-y: auto;
     padding: 15px 0;
     /* animation-name: switchPage; */
     /* animation-duration: .5s; */
@@ -97,7 +97,10 @@ main > div {
 /* Custom Classes */
 
 main {
+    display: flex;
+    flex-direction: column;
     position: relative;
+    overflow-y: auto;
     background: var(--deeper-bk-color);
-    flex: 1 1 auto;
+    flex: 1;
 }

@@ -4,7 +4,12 @@ function Nav(props) {
   
     let pages = ["About", "Artwork", "Code"];
     function capitalize(string) {
-        return string.slice(0)[0].toUpperCase() + string.slice(1)
+        try {
+            return string.slice(0)[0].toUpperCase() + string.slice(1)
+        }
+        catch {
+            return string;
+        }
     }
     const [currentPage, setCurrentPage] = useState(capitalize(window.location.pathname.split("/")[1]));
     return(

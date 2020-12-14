@@ -24,7 +24,9 @@ function About() {
             </div>
      
             <br></br>
-            <div id = "current-projects">
+
+            <a id = "resume" target = "_blank" href = "./images/Hunter Wilkins Resume V5.pdf">Resume</a>
+            {/* <div id = "current-projects">
                 <h1>Current Projects...</h1>
                <br></br>
                 <ul className = "banner">
@@ -50,7 +52,7 @@ function About() {
                         </p>
                     </li>
                 </ul>
-            </div>
+            </div> */}
             
         </div>
     )

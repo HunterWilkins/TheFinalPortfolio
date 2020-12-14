@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
 }
+
 #about-info {
     display: flex;
     flex-direction: row;
@@ -19,6 +20,22 @@
 
 #about-info :last-child {
     flex:2;
+}
+
+#resume {
+    font-size: 20px;
+    background: var(--main-bk-color);
+    margin: 0 auto;
+    width: 150px;
+    padding: 5px;
+    border-radius: 20px;
+    border: var(--main-bk-color-half) solid 2px;
+
+    transition: .15s;
+}
+
+#resume:hover {
+    border: var(--main-color) solid 2px;
 }
 
 #current-projects {
