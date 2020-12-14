@@ -10,6 +10,7 @@ import Header from "./components/Header";
 import NewHome from "./pages/NewHome";
 import Footer from "./components/Footer";
 import {GlobalContextProvider} from "./utils/GlobalContext";
+import "./App.css";
 
 function App() {
   return (
