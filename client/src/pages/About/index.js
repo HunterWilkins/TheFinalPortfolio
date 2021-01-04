@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
-// import "./style.css";
+import "./style.css";
 
 function About() {
     return(
@@ -8,16 +8,10 @@ function About() {
             <div className = "banner">
                 <section id = "about-info">
                     <div>
-                        {/* <figure id ="portrait-box">
+                        <figure id ="portrait-box">
                             <img id = "portrait" src = "images/self-portrait.jpg" />
-                        </figure> */}
-                        <p>as;dlfkjas;dlfkja;sldkfja;lsdkjfa;lsdkjf;alskdjf;alskdjf;laksdjf
-                            ;alsdkjfa;lsdkfj;alskdjf;alskdjf;alskdjf;alskdjf;alkdsfj;asldkfja;lsdkjf
-                            a;lsdkfja;ldksfja;sldkjf;alskdjf;alskdjf;alskdjf;alskdjf;alskdjf;alskdjf;alsdkjf
-                            ;alsdkjfa;lsdkfj;alskdjf;alksdjf;alskdjf;alskdjf;alskdjf;aldksjfa;lskdjf;alskdjf;alksjdf
-                            ;alsdkfj;alsdkjf;alsdkjf;alksdjf;alskdjf;laskdjf;laksdjf;alkdsjf;laskdjf;alskdjf;alskdjf;alskjd
-                            ;alsdkfja;lsdkjf;alksdjf;alskdjf;alskdjf;alkdsjf;laksdjf;laksjdf;laksjdf;laksjdf;lakjsdf
-                        </p>
+                        </figure>
+                        
                     </div>
                         <div>
                             <h1 className = "title">About Me</h1>
