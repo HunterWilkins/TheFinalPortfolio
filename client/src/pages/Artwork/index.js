@@ -15,12 +15,13 @@ function Artwork() {
         genre: ""
     });
 
+
     const [imgError, setImgError] = useState(false);
 
     useEffect(()=> {
-        API.getThumbnails().then(res => {
-            setGenres(res.data);            
-        }).catch(err => console.log(err));    
+            API.getThumbnails().then(res => {
+                setGenres(res.data);            
+            }).catch(err => console.log(err));    
     }, []);
 
     function fixTitle(title) {
@@ -60,7 +61,7 @@ function Artwork() {
                                             setFullscreen(true);
                                             }} className = "thumbnail-box" key = {Math.random() * item.thumbnails.length} style = {imgLoaded ? {} : {backgroundImage: "url('/images/icons/loading.gif')"}}>
                                                 <p className = "thumbnail-title" key = {Math.random() * item.thumbnails.length + thumbnail}>{fixTitle(thumbnail)}</p>
-                                                <img onLoad = {() => {setImgLoaded(true)}} /*onError = {() => setImgError(true)}*/ className = "thumbnail" src = {imgError ? "/images/backup-img.jpg" : "/images/Artwork/" + item.genre + "/thumbnails/" + thumbnail} alt = {fixTitle(thumbnail)}></img>
+                                                <img onLoad = {() => {setImgLoaded(true)}} /*onError = {() => setImgError(true)}*/ className = "thumbnail" src = {"/images/Artwork/" + item.genre + "/thumbnails/" + thumbnail} alt = {fixTitle(thumbnail)}></img>
                                         </figure>
                                         )
                                     })

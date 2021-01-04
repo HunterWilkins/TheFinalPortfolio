@@ -1,5 +1,7 @@
 import axios from "axios";
 
+let counter = 0;
+
 export default {
     getThumbnails: function() {
         return axios.get("/api/art")
