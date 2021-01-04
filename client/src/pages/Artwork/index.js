@@ -4,6 +4,7 @@ import {useGlobalContext} from "../../utils/GlobalContext";
 import API from "../../utils/api";
 
 import FullImage from "../../components/FullImage";
+import Thumbnail from "../../components/Thumbnail";
 
 function Artwork() {
     // const [state, dispatch] = useGlobalContext();
