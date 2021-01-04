@@ -41,7 +41,7 @@ function Artwork() {
             }
                      
             <section id = "gallery">
-               
+               <p>When you select an image, if there's a description, you can hide it by clicking or tapping on it.</p>
                 {                
                     genres[0].thumbnails ? 
                     genres.map(item => {

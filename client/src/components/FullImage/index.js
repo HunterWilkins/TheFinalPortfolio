@@ -39,7 +39,7 @@ function FullImage({src, genre, fullScreenOff}) {
                 />
             </figure>
             <summary style = {showDesc && description.length > 0 ? {display: "block"} : {display: "none"}} id = "description" onClick = {() => setShowDesc(false)}>
-                <p>{description + "\n(click/touch this box to toggle the description)"}</p>
+                <p>{description}</p>
             </summary>
         </div>
     )
