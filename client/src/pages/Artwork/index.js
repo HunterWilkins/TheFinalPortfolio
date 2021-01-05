@@ -20,9 +20,9 @@ function Artwork() {
     const [imgError, setImgError] = useState(false);
 
     useEffect(()=> {
-            API.getThumbnails().then(res => {
-                setGenres(res.data);            
-            }).catch(err => console.log(err));    
+        API.getThumbnails().then(res => {
+            setGenres(res.data);            
+        }).catch(err => console.log(err));    
     }, []);
 
     function fixTitle(title) {
@@ -35,12 +35,8 @@ function Artwork() {
 
     return(
         <div id = "artwork-page">  
-            {
-             fullscreen ? 
-                <FullImage fullScreenOff = {fullScreenOff}src = {fullImg.src} genre = {fullImg.genre}/>
-                :
-                ""
-            }
+           
+            <FullImage fullScreenOff = {fullScreenOff} fullscreen = {fullscreen} src = {fullImg.src} genre = {fullImg.genre}/>
                      
             <section id = "gallery">
                <p>When you select an image, if there's a description, you can hide it by clicking or tapping on it.</p>
@@ -53,17 +49,23 @@ function Artwork() {
                             <section className = "thumbnails">
                                 {
                                     item.thumbnails.map(thumbnail => {
-                                        return( 
-                                        <figure onClick = {() => {
-                                            setFullImg({
-                                                src: thumbnail,
-                                                genre: item.genre
-                                            });
-                                            setFullscreen(true);
-                                            }} className = "thumbnail-box" key = {Math.random() * item.thumbnails.length} style = {imgLoaded ? {} : {backgroundImage: "url('/images/icons/loading.gif')"}}>
-                                                <p className = "thumbnail-title" key = {Math.random() * item.thumbnails.length + thumbnail}>{fixTitle(thumbnail)}</p>
-                                                <img onLoad = {() => {setImgLoaded(true)}} /*onError = {() => setImgError(true)}*/ className = "thumbnail" src = {"/images/Artwork/" + item.genre + "/thumbnails/" + thumbnail} alt = {fixTitle(thumbnail)}></img>
-                                        </figure>
+                                        return(
+                                            <Thumbnail 
+                                                thumbnail = {thumbnail} 
+                                                item = {item}
+                                                setFullImg = {setFullImg}
+                                                setFullscreen = {setFullscreen}
+                                            />
+                                        // <figure onClick = {() => {
+                                        //     setFullImg({
+                                        //         src: thumbnail,
+                                        //         genre: item.genre
+                                        //     });
+                                        //     setFullscreen(true);
+                                        //     }} className = "thumbnail-box" key = {Math.random() * item.thumbnails.length} style = {imgLoaded ? {} : {backgroundImage: "url('/images/icons/loading.gif')"}}>
+                                        //         <p className = "thumbnail-title" key = {Math.random() * item.thumbnails.length + thumbnail}>{fixTitle(thumbnail)}</p>
+                                        //         <img onLoad = {() => {setImgLoaded(true)}} /*onError = {() => setImgError(true)}*/ className = "thumbnail" src = {"/images/Artwork/" + item.genre + "/thumbnails/" + thumbnail} alt = {fixTitle(thumbnail)}></img>
+                                        // </figure>
                                         )
                                     })
                                 }

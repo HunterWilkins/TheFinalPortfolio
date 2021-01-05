@@ -3,7 +3,7 @@ import "./style.css";
 import API from "../../utils/api";
 import {useGlobalContext} from "../../utils/GlobalContext";
 
-function FullImage({src, genre, fullScreenOff}) {
+function FullImage({src, genre, fullScreenOff, fullscreen}) {
     // const {state, dispatch} = useGlobalContext();
     const [loaded, setLoaded] = useState(false);
     const [showDesc, setShowDesc] = useState(true);
@@ -23,9 +23,10 @@ function FullImage({src, genre, fullScreenOff}) {
     function changeSrc(src) {
         return src.replace(/-Thumbnail/g, "");
     }
+
     
     return(
-        <div  id = "full-image-box">
+        <div  id = "full-image-box" style = {fullscreen ? {display: "flex"} : {display: "none"}}>
             <figure id = "full-image-figure" onClick = {() => fullScreenOff()} style = {!loaded ? {backgroundImage: "url('/images/icons/loading.gif')"} : {}}>
                 <img onLoad = {() => {
                     console.log("Image Loaded");
