@@ -22,7 +22,7 @@ nav {
     align-items: flex-end;
     justify-content: space-evenly;
     /* box-shadow: 0 10px 5px var(--deeper-bk-color); */
-    z-index: 5;
+
     flex: 1;
 }
 
