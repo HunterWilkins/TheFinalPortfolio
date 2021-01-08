@@ -44,7 +44,7 @@ nav > * {
     animation-duration: .15s;
 }
 
-@media only screen and (max-width: 500px){
+@media only screen and (max-width: 500px) and (orientation: portrait){
    header {
        text-align:center;
        display: block;
