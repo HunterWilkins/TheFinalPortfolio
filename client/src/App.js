@@ -15,9 +15,9 @@ import "./App.css";
 function App() {
   return (
     <Router>
-        <Header />
+        
         <NewHome>
-
+        <Header />
         <GlobalContextProvider>
           <Switch>
             <Route exact path = "/about" component ={About} />
