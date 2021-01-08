@@ -64,6 +64,7 @@
 }
 
 #description {
+    cursor: pointer;
     width: 100%;
     padding: 15px;
     position: fixed;
