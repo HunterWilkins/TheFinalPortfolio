@@ -13,7 +13,7 @@ function FullImage({src, genre, fullScreenOff, fullscreen}) {
     }, [])
 
     function getDescription(image) {
-        console.log("LOOKING FOR THE DESCRIPTION");
+        console.log("LOOKING FOR THE DESCRIPTION of " + image);
         API.getDescription(image.replace(/=|.jpg|.png/g, "")).then(({data}) => {
             setDescription(data);
             console.log(data);
