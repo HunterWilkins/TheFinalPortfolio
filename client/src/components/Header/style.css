@@ -49,6 +49,7 @@ nav > * {
        text-align:center;
        display: block;
        height: initial;
+       padding: 200px;
    }
 
    #logo {
