@@ -13,10 +13,10 @@ function FullImage({src, genre, fullScreenOff, fullscreen}) {
     }, [])
 
     function getDescription(image) {
-        console.log("LOOKING FOR THE DESCRIPTION of " + image);
+        // console.log("LOOKING FOR THE DESCRIPTION of " + image);
         API.getDescription(image.replace(/=|.jpg|.png/g, "")).then(({data}) => {
             setDescription(data);
-            console.log(data);
+            // console.log(data);
         }).catch(() => setDescription(""));
     }
 
@@ -29,7 +29,7 @@ function FullImage({src, genre, fullScreenOff, fullscreen}) {
         <div  id = "full-image-box" style = {fullscreen ? {display: "flex"} : {display: "none"}}>
             <figure id = "full-image-figure" onClick = {() => fullScreenOff()} style = {!loaded ? {backgroundImage: "url('/images/icons/loading.gif')"} : {}}>
                 <img onLoad = {() => {
-                    console.log("Image Loaded");
+                    // console.log("Image Loaded");
                     // getDescription(changeSrc(src));
                     setLoaded(true);
                 }} 

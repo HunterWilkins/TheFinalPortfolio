@@ -9,12 +9,6 @@ function Thumbnail({thumbnail, genre, item, setFullImg, setFullscreen}) {
         return title.replace(/=|.jpg|.png|-Thumbnail/g," ");
     }
 
-    function timeout(seconds) {
-        
-        setTimeout(function() {
-            return true
-        })
-    }
     return(
         <figure onClick = {() => {
             setFullImg({
