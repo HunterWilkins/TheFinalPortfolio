@@ -10,6 +10,7 @@ function Code(props) {
             title: "GigBook",
             img: "Gigbook-Icon.png",
             desc: "The Easiest Way for Venues and Artists to make Beautiful Music Together",
+            tech: ["Node.js", "JavaScript", "CSS3", "Express", "MySQL", "Sequelize"]
         },
         {
             href : "https://hunterwilkins.github.io/project_one/",
@@ -17,6 +18,7 @@ function Code(props) {
             title: "Nusic",
             img: "Nusic-logo-transparent.png",
             desc: "Discover New Music Playing in Your Area",
+            tech: ["JavaScript", "HTML5", "CSS3"]
         },
 
         {
@@ -25,6 +27,7 @@ function Code(props) {
             title: "The Bottomless Box",
             img: "Icon.png",
             desc: "Inventory management and shopping lists made significantly less dull!",
+            tech: ["Node.js", "JavaScript", "CSS3", "Express", "React.js"]
         },
         {
             href : "https://memelodge.herokuapp.com",
@@ -32,6 +35,7 @@ function Code(props) {
             title: "MemeLodge",
             img: "Memelodge_Logo.png",
             desc: "The Premier Spot for MEMES and DIVISIVE POLITICAL DISCOURSE!",
+            tech: ["Node.js", "JavaScript", "CSS3", "Express", "MongoDB", "Mongoose", "Handlebars.js"]
         },
         {
             href : "https://rootbuyerremastered.herokuapp.com",
@@ -39,13 +43,15 @@ function Code(props) {
             title: "RootBuyer Remastered",
             img: "RootBuyer.png",
             desc: "An Unofficial Remastering of RootBuyer.com, using React.js",
+            tech: ["Node.js", "JavaScript", "CSS3", "Express", "MongoDB", "Mongoose", "React.js"]
         },
         {
             href: "https://tardyblom.com",
             github: "https://github.com/HunterWilkins/TheGoodStuff",
             title: "Tardyblom",
             img: "Tardyblom-Logo.png",
-            desc: "My official blog site!"
+            desc: "My official blog site!",
+            tech: ["Node.js", "JavaScript", "CSS3", "Express", "MySQL", "Sequelize", "React.js", "React Hooks"]
         }
 
     ];
@@ -56,14 +62,28 @@ function Code(props) {
                 codeCards.map(code => {
                     return (
                         <div href = {code.href} className = "code">
-                            <h3>{code.title}</h3>
-                            <a href = {code.href} target = "__blank">
+                            <span className = "code-topper">
+                                <h2>{code.title}</h2>
+                                <a className = "icon-wrapper" href = {code.github} target = "__blank">
+                                    <img src = {"/images/icons/github-icon.png"} alt = "github icon" />
+                                </a>
+                            </span>
+                            
+                            <a className = "deployed-icon-wrapper" href = {code.href} target = "__blank">
                                 <img className = "deployed-icon" src = {"/images/icons/Code/" + code.img} alt = {code.title} />
                             </a>
-                            <p>{code.desc}</p>
-                            <a href = {code.github} target = "__blank">
-                                <img src = {"/images/icons/github-icon.png"} alt = "github icon" />
-                            </a>
+                            <p className = "code-desc">{code.desc}</p>
+                            <br></br>
+                            <section className = "tech-tags">
+                                {
+                                    code.tech.map(item => {
+                                        return(
+                                            <span>{item}</span>
+                                        )
+                                    })
+                                }
+                            </section>
+                           
                         </div>
                     )
                 })
