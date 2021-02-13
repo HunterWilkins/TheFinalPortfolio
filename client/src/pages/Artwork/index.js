@@ -16,7 +16,6 @@ function Artwork() {
         genre: ""
     });
 
-
     const [imgError, setImgError] = useState(false);
 
     useEffect(()=> {
