@@ -46,7 +46,7 @@ function Code(props) {
             tech: ["Node.js", "JavaScript", "CSS3", "Express", "MongoDB", "Mongoose", "React.js"]
         },
         {
-            href: "https://tardyblom.com",
+            href: "http://tardyblom.com",
             github: "https://github.com/HunterWilkins/TheGoodStuff",
             title: "Tardyblom",
             img: "Tardyblom-Logo.png",
