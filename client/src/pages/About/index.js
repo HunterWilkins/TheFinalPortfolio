@@ -20,7 +20,7 @@ function About() {
                                 With over ten years of experience in Adobe PhotoShop and two years of experience in Web Development, 
                                 he's constantly learning new ways to meld together the creative and the practical.
                             </p>
-                            <Link id = "resume" target = "_blank" to = "./images/Hunter Wilkins Resume V6.pdf">Resume</Link>
+                            <Link id = "resume" target = "_blank" to = "./images/Hunter Wilkins Resume V7.pdf">Resume</Link>
 
                         </div>
 
