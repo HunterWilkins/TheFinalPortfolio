@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 function Nav(props) {
   
-    let pages = ["About", "Artwork", "Code"];
+    let pages = ["About", "Artwork"];
     function capitalize(string) {
         try {
             return string.slice(0)[0].toUpperCase() + string.slice(1)

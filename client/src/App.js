@@ -11,6 +11,7 @@ import NewHome from "./pages/NewHome";
 import Footer from "./components/Footer";
 import {GlobalContextProvider} from "./utils/GlobalContext";
 import "./App.css";
+import Music from "./pages/Music";
 
 function App() {
   return (
@@ -23,7 +24,9 @@ function App() {
             <Route exact path = "/about" component ={About} />
             <Route exact path = "/artwork" component ={Artwork} />
             <Route exact path = "/blog" component ={Blog} />
-            <Route exact path = "/code" component ={Code} />
+            {/* <Route exact path = "/code" component ={Code} /> */ 
+            /* Heroku disabled free plan, unable to see these. */}
+            {/* <Route exact path = "/music" component = {Music} /> */}
             <Route exact path = "/" component = {About} />
           </Switch>
         </GlobalContextProvider>
